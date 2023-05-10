@@ -17,4 +17,4 @@ future: true
 permalink: /:title/
 
 #设置分页，每页数量
-paginate: 2
+# paginate: 2

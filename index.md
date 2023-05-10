@@ -8,9 +8,6 @@ layout: page
 {{ site }}
 
 
-## site.paginator
-{{ site.paginator }}
-
 ## paginator
 {{ paginator }}
 

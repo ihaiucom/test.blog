@@ -13,6 +13,12 @@ layout: page
 </ul>
 
 
+<style type="text/css">
+  table {
+    margin: 1rem 1rem;
+  }
+</style>
+
 
 {% for page in site.posts %}
 <table>

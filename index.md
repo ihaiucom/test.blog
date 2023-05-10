@@ -4,7 +4,19 @@ layout: page
 ---
 
 
+## site
+{{ site }}
 
+
+## site.paginator
+{{ site.paginator }}
+
+## paginator
+{{ paginator }}
+
+
+## site.paginator
+{{ site.paginator }}
 
 
 {% for post in paginator.posts %}

@@ -10,3 +10,4 @@
 #   syntax_highlighter: rouge
 # theme: jekyll-theme-cayman
 future: true
+permalink: /:title/

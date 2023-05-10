@@ -1,20 +1,13 @@
-lsi: true #为相关文章生成索引
-safe: true #禁用 自定义插件。
-source: . #修改 Jekyll 读取文件的路径
-incremental: false #启用实验特性 incremental build。Incremental build 只重建修改过的 posts 和 pages，对大型网站有显著的性能提升，但在特定情况下也会影响网站生成。
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
-
-#用将来的日期发布文章
 future: true
-
-# 默认形式：https://blog.zs.center/2023/05/01/第1篇博客.html
-# 修改后: https://blog.zs.center/第1篇博客/
 permalink: /:title/
-
-#设置分页，每页数量
-# paginate: 2
+url: http://blog.zs.center
+name: Blog学习
+author: ihaiu
+qq: 593705098
+email: ihaiu@qq.com
+cnzz: 1260003113
+weibo: zengfeng75
+github: ihaiucom
+paginate: 20
+truncate: true
+about: "爱海游"

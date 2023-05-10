@@ -3,47 +3,82 @@ title: 目录
 layout: page
 ---
 
-<!-- 遍历分页后的文章 -->
+
+
+
+
 {% for post in paginator.posts %}
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p class="author">
-    <span class="date">{{ post.date }}</span>
-  </p>
-  <div class="content">
-    {{ post.content }}
-  </div>
+<article class="post_box" >
+    <div class="c-top" >
+            <div class="datetime">{{ post.date | date:"%Y" }}<br />{{ post.date | date:"%m-%d" }}</div> 
+
+            <header class="tit">
+                <h2 class="h1">
+                  <a href="{{ post.url }}#content" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+                </h2>
+
+                <aside class="iititle">
+                    <span><i class="icon-user icon-large"></i>发布:<a href="tencent://message/?uin={{ post.authorQQ }}" title="发布:{{ post.author }} QQ:{{ post.authorQQ }} Email:{{ post.authorEmail }}" rel="author">{{ post.author }}</a></span>
+
+                    <span><i class="icon-folder-open icon-large"></i>分类:<a href="/categories/#{{ post.categories }}" rel="category tag">{{ post.categories }}</a></span>
+
+                </aside>
+
+            </header>
+    </div>
+
+
+
+    <div class="c-con" >  
+          {% if post.thumbnail %}
+          <a href="{{ post.url }}#content" class="disp_a" rel="bookmark" title="">  
+              <img src="{{ post.thumbnail }}" alt="{{ post.title }}" />  
+          </a>
+          {% endif %}
+
+          {{ post.excerpt | remove: '<p>' | remove: '</p>' }} &raquo;
+          <a href="{{ post.url }}#content" class="more-link">Read More ></a><div class="cls"></div>
+    </div>
+
+
+    <div class="c-bot">
+            <div class="cls"></div>
+    </div>
+</article>
 {% endfor %}
 
-<!-- 分页链接 -->
-<div class="pagination">
-{% if paginator.total_pages > 1 %}
-  <!-- 上一页 -->
+<div class="cls"></div>
+
+<div id="post-pagination" class="paginator">
+
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a>
-  {% else %}
-    <span>&laquo; 上一页</span>
-  {% endif %}
-
-  <!-- 页码 -->
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <em>{{ page }}</em>
-    {% elsif page == 1 %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% if paginator.previous_page == 1 %}
+    <a href="/#content"><前页</a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    <a href="/page{{paginator.previous_page}}#content">&lt;前页</a>
     {% endif %}
-  {% endfor %}
-
-  <!-- 下一页 -->
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &raquo;</a>
   {% else %}
-    <span>下一页 &raquo;</span>
+    <span class="previous disabled">&lt;前页</span>
   {% endif %}
-{% endif %}
 
+      {% if paginator.page == 1 %}
+      <span class="current-page">1</span>
+      {% else %}
+      <a href="/#content">1</a>
+      {% endif %}
+
+    {% for count in (2..paginator.total_pages) %}
+      {% if count == paginator.page %}
+      <span class="current-page">{{count}}</span>
+      {% else %}
+      <a href="/page{{count}}#content">{{count}}</a>
+      {% endif %}
+    {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="next" href="/page{{paginator.next_page}}#content">后页&gt;</a>
+  {% else %}
+    <span class="next disabled" >后页&gt;</span>
+  {% endif %}
   (共{{ paginator.total_posts }}篇)
 </div>
-
-

@@ -120,6 +120,14 @@ hr {
 
 
 /* 内容区 */
+.main-content 
+{
+  max-width: 75rem;
+  padding: 2rem 6rem;
+  margin: 0 auto;
+  font-size: 1.1rem; 
+} 
+
 @media screen and (min-width: 75em) {
   .main-content 
   {
@@ -147,6 +155,7 @@ hr {
     font-size: 1rem; 
   } 
 }
+
 
 
 .main-content hr 

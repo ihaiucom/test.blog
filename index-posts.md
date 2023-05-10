@@ -77,7 +77,7 @@ layout: page
     <tr>
       <td class="td_key">下一篇</td>
       <td class="td_key">next</td>
-      <td class="td_val">{{ page.next }} </td>
+      <td class="td_val">{{ page.next.title }} </td>
     </tr>
     {% endif %} 
 </table>

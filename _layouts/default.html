@@ -4,18 +4,14 @@
 {% include head.html %}
 
 <body>
-    
 
-    <div>
-        {% include navbar.html %}
-        _layouts/default.html
-        
-        {{ content }}
+    {% include navbar.html %}
+    _layouts/default.html
     
-        {% include comment.html %}
-        {% include footer.html %}
-    </div>
+    {{ content }}
 
+    {% include comment.html %}
+    {% include footer.html %}
 
 </body>
 </html>

@@ -17,12 +17,14 @@ layout: page
 <!-- 分页链接 -->
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
+  <!-- 上一页 -->
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a>
   {% else %}
-    <span>&laquo; Prev</span>
+    <span>&laquo; 上一页</span>
   {% endif %}
 
+  <!-- 页码 -->
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
       <em>{{ page }}</em>
@@ -33,10 +35,11 @@ layout: page
     {% endif %}
   {% endfor %}
 
+  <!-- 下一页 -->
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &raquo;</a>
   {% else %}
-    <span>Next &raquo;</span>
+    <span>下一页 &raquo;</span>
   {% endif %}
 </div>
 {% endif %}

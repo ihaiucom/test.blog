@@ -107,3 +107,46 @@ div
     font-size: 1.75rem; 
   } 
 }
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+td, th {
+  padding: 0;
+}
+
+
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  table-layout: fixed;
+}
+
+
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #878d91;
+  /* width: 50%; */
+}
+
+
+hr {
+  border:0;
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #fff;
+  margin:30px 0;
+}

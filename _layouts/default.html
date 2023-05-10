@@ -5,16 +5,17 @@
 
 <body>
     
-    {% include navbar.html %}
 
     <div>
+        {% include navbar.html %}
         _layouts/default.html
+        
+        {{ content }}
+    
+        {% include comment.html %}
+        {% include footer.html %}
     </div>
 
-    {{ content }}
-
-    {% include comment.html %}
-    {% include footer.html %}
 
 </body>
 </html>

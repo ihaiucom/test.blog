@@ -15,8 +15,8 @@ layout: page
 {% endfor %}
 
 <!-- 分页链接 -->
-{% if paginator.total_pages > 1 %}
 <div class="pagination">
+{% if paginator.total_pages > 1 %}
   <!-- 上一页 -->
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a>
@@ -41,5 +41,7 @@ layout: page
   {% else %}
     <span>下一页 &raquo;</span>
   {% endif %}
-</div>
 {% endif %}
+
+  (共{{ paginator.total_posts }}篇)
+</div>

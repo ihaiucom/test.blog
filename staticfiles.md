@@ -4,6 +4,10 @@ layout: page
 ---
 
 
+[静态文件  http://jekyllcn.com/docs/static-files/]: http://jekyllcn.com/docs/static-files/
+
+
+
 <table>
   <thead>
     <tr>
@@ -13,9 +17,9 @@ layout: page
       <th>文件名称（不带扩展名）</th>
       <th>扩展名</th>
     </tr>
-    
+
   </thead>
-  
+
   <tbody>
     <tr>
       <th>path</th>
@@ -26,14 +30,15 @@ layout: page
     </tr>
 
     {% for file in site.static_files %}
-
+    
     <tr>
         <td><a href="{{ file.path }}" target="_blank">{{ file.path }} </a></td>
         <td> {{ file.modified_time }} </td>
+        <td> {{ file.name }} </td>
         <td> {{ file.basename }} </td>
         <td> {{ file.extname }} </td>
     </tr>
-
+    
     {% endfor %}
   </tbody>
 </table>

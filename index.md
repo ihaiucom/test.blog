@@ -1,6 +1,6 @@
 ---
 title: 目录
-layout: default
+layout: page
 ---
 
 

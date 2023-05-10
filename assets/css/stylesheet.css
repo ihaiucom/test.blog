@@ -20,6 +20,15 @@ div
   margin: 20px;
 }
 
+
+/* 分割线 */
+hr {
+  border:0;
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #fff;
+  margin:30px 0;
+}
+
   
 .btn 
 {
@@ -109,6 +118,47 @@ div
 }
 
 
+
+
+@media screen and (min-width: 75em) {
+  .main-content 
+  {
+    max-width: 75rem;
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem; 
+  } 
+}
+
+    
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .main-content 
+  {
+    padding: 2rem 4rem;
+    font-size: 1.1rem; 
+  } 
+}
+
+@media screen and (max-width: 42em) 
+{
+  .main-content 
+  {
+    padding: 2rem 1rem;
+    font-size: 1rem; 
+  } 
+}
+
+
+.main-content hr 
+{
+  height: 2px;
+  padding: 0;
+  margin: 1rem 0;
+  background-color: #eff0f1;
+  border: 0; 
+}
+
+
 /* 表格 */
 table {
   border-collapse: collapse;
@@ -143,14 +193,6 @@ table th, table td {
   /* width: 50%; */
 }
 
-
-/* 分割线 */
-hr {
-  border:0;
-  border-top:1px solid #e5e5e5;
-  border-bottom:1px solid #fff;
-  margin:30px 0;
-}
 
 /* 页脚 */
 .site-footer {

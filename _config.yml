@@ -9,7 +9,7 @@
 #   math_engine: mathjax
 #   syntax_highlighter: rouge
 # theme: jekyll-theme-cayman
-# future: true
+future: true
 
 # 默认形式：https://blog.zs.center/2023/05/01/第1篇博客.html
 # 修改后: https://blog.zs.center/第1篇博客/

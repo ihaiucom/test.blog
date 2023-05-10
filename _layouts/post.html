@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-<section class="meta">
+<section class="main-content meta">
     <!-- 发布时间 -->
     <span class="time">
         <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
@@ -48,24 +48,27 @@ layout: default
 <section class="main-content" id="content">
     <!-- 页面内容 -->
     {{ content }}
+
+    
+    <section class="page">
+
+        <!-- 上一页 -->
+        {% if page.previous %} 
+        <span><a href="{{ page.previous.url }}#content" class="pageNav" {% unless page.previous %} class="pageNavInvalid" {% endunless %} >上一篇: {{ page.previous.title }}</a></span>
+        <br/>
+        {% endif %}
+
+        <!-- 下一页 -->
+        {% if page.next %}
+            <span><a href="{{ page.next.url }}#content" class="pageNav" {% unless page.next %} class="pageNavInvalid" {% endunless %} >下一篇: {{ page.next.title }}</a></span>
+        {% endif %} 
+
+    </section>
+    
+    <!-- 评论 -->
+    {% include comment.html %}
 </section>
 
-<section class="page">
-
-    <!-- 上一页 -->
-    {% if page.previous %} 
-    <span><a href="{{ page.previous.url }}#content" class="pageNav" {% unless page.previous %} class="pageNavInvalid" {% endunless %} >上一篇: {{ page.previous.title }}</a></span>
-    <br/>
-    {% endif %}
-
-    <!-- 下一页 -->
-    {% if page.next %}
-        <span><a href="{{ page.next.url }}#content" class="pageNav" {% unless page.next %} class="pageNavInvalid" {% endunless %} >下一篇: {{ page.next.title }}</a></span>
-    {% endif %} 
-
-</section>
 
 
-<!-- 评论 -->
-{% include comment.html %}
 

@@ -1,1 +1,11 @@
-theme: jekyll-theme-cayman
+# lsi: false #为相关文章生成索引
+# safe: true #禁用 自定义插件。
+# source: . #修改 Jekyll 读取文件的路径
+# incremental: false #启用实验特性 incremental build。Incremental build 只重建修改过的 posts 和 pages，对大型网站有显著的性能提升，但在特定情况下也会影响网站生成。
+# highlighter: rouge
+# gist:
+#   noscript: false
+# kramdown:
+#   math_engine: mathjax
+#   syntax_highlighter: rouge
+# theme: jekyll-theme-cayman

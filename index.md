@@ -1,1 +1,5 @@
-hello index.md
+---
+layout: default
+---
+
+index.md

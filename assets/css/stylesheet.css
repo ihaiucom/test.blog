@@ -229,3 +229,17 @@ table th, table td {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+
+
+.meta
+{
+  margin-bottom: 2.5rem;
+  color: #999;
+}
+
+.meta a
+{
+  color: #9AC;
+}
+    

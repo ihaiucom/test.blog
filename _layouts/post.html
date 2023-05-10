@@ -3,7 +3,69 @@ layout: default
 ---
 
 
-<section class="main-content" id="content">
-    {{ content }}
-    {% include comment.html %}
+<section class="meta">
+    <!-- 发布时间 -->
+    <span class="time">
+        <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
+    </span>
+
+    <!-- 作者信息 -->
+    {% if page.author %}
+    | 
+    <span class="author">
+    发布
+    <a href="tencent://message/?uin={{ page.qq }}" title="发布:{{ page.author }} QQ:{{ page.qq }}" rel="author">{{ page.author }}</a>&nbsp;
+    {% if page.email %}
+    <a href="mailto:{{ page.email }}" title="发布:{{ page.author }} Email:{{ page.email }}" rel="author">{{ page.email }}</a>&nbsp;
+    {% endif %}
+    </span>
+    {% endif %}
+
+    <!-- 分类 -->
+    {% if page.categories.size != 0 %}
+    | 
+    <span class="categories">
+    分类
+    {% for cat in page.categories %}
+    <a href="/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
+    {% endfor %}
+    </span>
+    {% endif %}
+
+    <!-- 标签 -->
+    {% if page.tags.size != 0 %}
+    | 
+    <span class="tags">
+    标签
+    {% for tag in page.tags %}
+    <a href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;
+    {% endfor %}
+    </span>
+    {% endif %}
+    
 </section>
+
+<section class="main-content" id="content">
+    <!-- 页面内容 -->
+    {{ content }}
+</section>
+
+<section class="page">
+
+    <!-- 上一页 -->
+    {% if page.previous %} 
+    <span><a href="{{ page.previous.url }}#content" class="pageNav" {% unless page.previous %} class="pageNavInvalid" {% endunless %} >上一篇: {{ page.previous.title }}</a></span>
+    <br/>
+    {% endif %}
+
+    <!-- 下一页 -->
+    {% if page.next %}
+        <span><a href="{{ page.next.url }}#content" class="pageNav" {% unless page.next %} class="pageNavInvalid" {% endunless %} >下一篇: {{ page.next.title }}</a></span>
+    {% endif %} 
+
+</section>
+
+
+<!-- 评论 -->
+{% include comment.html %}
+

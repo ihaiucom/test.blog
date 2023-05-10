@@ -9,8 +9,13 @@
 #   math_engine: mathjax
 #   syntax_highlighter: rouge
 # theme: jekyll-theme-cayman
+
+#用将来的日期发布文章
 future: true
 
 # 默认形式：https://blog.zs.center/2023/05/01/第1篇博客.html
 # 修改后: https://blog.zs.center/第1篇博客/
 permalink: /:title/
+
+#设置分页，每页数量
+paginate: 2 

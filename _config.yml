@@ -1,5 +1,5 @@
 future: true
-permalink: /:categories/:title.html
+permalink: /:title/
 baseurl: ""
 url: http://blog.zs.center
 encoding: utf-8

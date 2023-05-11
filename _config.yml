@@ -1,6 +1,17 @@
 future: true
 permalink: /:title/
 url: http://blog.zs.center
+encoding: utf-8
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+
+paginate: 5
+gems: [jekyll-paginate]
+paginate_path: "page:num"
+
 name: Blog学习
 author: ihaiu
 qq: 593705098
@@ -8,6 +19,5 @@ email: ihaiu@qq.com
 cnzz: 1260003113
 weibo: zengfeng75
 github: ihaiucom
-paginate: 5
 truncate: true
 about: "爱海游"
